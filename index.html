@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Platinum Aesthetics | Stanley, County Durham</title>
-  <meta name="description" content="Luxury aesthetic treatments in Stanley, County Durham. Book online – Botox, fillers, skin rejuvenation and more.">
+  <meta name="description" content="Luxury aesthetic treatments in Stanley, County Durham. Book online with a simple 20% deposit.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --platinum: #E8E6E3;
-      --silver: #C0C0C0;
       --charcoal: #1A1A1A;
       --soft-black: #2C2C2C;
       --rose-gold: #B76E79;
@@ -20,6 +19,7 @@
       --white: #FFFFFF;
       --shadow: 0 20px 40px rgba(0,0,0,0.08);
       --radius: 12px;
+      --success: #2E7D32;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,7 +37,6 @@
       letter-spacing: 0.5px;
     }
     a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
 
     /* NAV */
     .nav {
@@ -160,7 +159,7 @@
     .stat h4 { font-size: 2.2rem; color: var(--rose-gold); line-height: 1; }
     .stat span { font-size: 0.85rem; color: #777; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* SERVICES + PRICES */
+    /* SERVICES */
     .services { background: var(--cream); }
     .services-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
@@ -185,9 +184,12 @@
     .service-card p { font-size: 0.92rem; color: #666; font-weight: 300; margin-bottom: 1.2rem; }
     .price {
       font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
-      color: var(--rose-gold); font-weight: 600; margin-bottom: 1rem;
+      color: var(--rose-gold); font-weight: 600; margin-bottom: 0.4rem;
     }
     .price span { font-size: 0.9rem; color: #888; font-family: 'Montserrat', sans-serif; font-weight: 400; }
+    .deposit-note {
+      font-size: 0.8rem; color: #888; margin-bottom: 1.2rem;
+    }
     .book-btn {
       display: inline-block; padding: 0.6rem 1.4rem; background: var(--charcoal);
       color: white; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;
@@ -195,26 +197,52 @@
     }
     .book-btn:hover { background: var(--rose-gold); }
 
-    /* BOOKING SECTION */
+    /* BOOKING */
     .booking { background: var(--white); }
     .booking-grid {
-      display: grid; grid-template-columns: 1fr 1.1fr; gap: 3.5rem; align-items: start;
+      display: grid; grid-template-columns: 1fr 1.15fr; gap: 3.5rem; align-items: start;
     }
     .booking-info h3 { font-size: 1.9rem; margin-bottom: 1.2rem; }
-    .booking-info p { color: #555; font-weight: 300; margin-bottom: 2rem; }
-    .price-list { list-style: none; }
+    .booking-info p { color: #555; font-weight: 300; margin-bottom: 1.5rem; }
+    .price-list { list-style: none; margin-bottom: 2rem; }
     .price-list li {
-      display: flex; justify-content: space-between; padding: 0.9rem 0;
+      display: flex; justify-content: space-between; padding: 0.85rem 0;
       border-bottom: 1px solid #eee; font-size: 0.95rem;
     }
     .price-list li:last-child { border-bottom: none; }
     .price-list .name { font-weight: 500; }
     .price-list .cost { color: var(--rose-gold); font-weight: 600; }
 
+    .deposit-policy {
+      background: #FDF6F6; border-left: 4px solid var(--rose-gold);
+      padding: 1.2rem 1.4rem; border-radius: 0 10px 10px 0; font-size: 0.9rem;
+      color: #555;
+    }
+    .deposit-policy strong { color: var(--charcoal); }
+
     .booking-form {
       background: var(--cream); padding: 2.5rem; border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
+
+    /* PRICE BREAKDOWN BOX */
+    .price-breakdown {
+      background: var(--charcoal); color: white; padding: 1.4rem 1.5rem;
+      border-radius: 12px; margin-bottom: 1.8rem;
+    }
+    .price-breakdown .row {
+      display: flex; justify-content: space-between; margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .price-breakdown .row:last-child { margin-bottom: 0; }
+    .price-breakdown .divider-line {
+      height: 1px; background: rgba(255,255,255,0.2); margin: 0.8rem 0;
+    }
+    .price-breakdown .deposit-row {
+      font-size: 1.15rem; font-weight: 600; color: var(--rose-gold-light);
+    }
+    .price-breakdown .balance-row { color: rgba(255,255,255,0.75); font-size: 0.9rem; }
+
     .form-group { margin-bottom: 1.4rem; }
     .form-group label {
       display: block; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.45rem;
@@ -233,19 +261,26 @@
       outline: none; border-color: var(--rose-gold);
     }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .selected-price {
-      background: var(--charcoal); color: white; padding: 1rem 1.3rem;
-      border-radius: 10px; margin-bottom: 1.5rem; display: flex;
-      justify-content: space-between; align-items: center; font-size: 1.05rem;
+
+    .checkbox-group {
+      display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 1.6rem;
     }
-    .selected-price span { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--rose-gold-light); }
+    .checkbox-group input[type="checkbox"] {
+      width: 18px; height: 18px; margin-top: 3px; accent-color: var(--rose-gold);
+      cursor: pointer; flex-shrink: 0;
+    }
+    .checkbox-group label {
+      font-size: 0.9rem; color: #555; text-transform: none; letter-spacing: 0;
+      font-weight: 400; cursor: pointer; line-height: 1.45;
+    }
+
     .form-submit {
       width: 100%; padding: 1.15rem; background: var(--charcoal); color: white;
       border: none; border-radius: 50px; font-size: 0.95rem; font-weight: 500;
       letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: all 0.3s;
     }
     .form-submit:hover { background: var(--rose-gold); }
-    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-submit:disabled { opacity: 0.55; cursor: not-allowed; }
 
     /* WHY US */
     .why-us { background: var(--charcoal); color: white; }
@@ -303,29 +338,42 @@
 
     /* SUCCESS MODAL */
     .modal-overlay {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 2000;
+      position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 2000;
       display: none; align-items: center; justify-content: center; padding: 1.5rem;
     }
     .modal-overlay.active { display: flex; }
     .modal {
-      background: white; border-radius: 16px; padding: 2.5rem; max-width: 440px;
-      width: 100%; text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+      background: white; border-radius: 16px; padding: 2.5rem; max-width: 480px;
+      width: 100%; text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.25);
       animation: modalIn 0.35s ease;
     }
     @keyframes modalIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .modal h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--charcoal); }
-    .modal p { color: #555; margin-bottom: 1.5rem; font-weight: 300; }
+    .modal-icon {
+      width: 60px; height: 60px; background: #E8F5E9; color: var(--success);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; margin: 0 auto 1.2rem;
+    }
+    .modal h3 { font-size: 1.7rem; margin-bottom: 0.8rem; color: var(--charcoal); }
+    .modal p { color: #555; margin-bottom: 1.4rem; font-weight: 300; font-size: 0.95rem; }
     .modal-details {
-      background: var(--cream); padding: 1.2rem; border-radius: 10px;
-      text-align: left; margin-bottom: 1.8rem; font-size: 0.95rem;
+      background: var(--cream); padding: 1.3rem; border-radius: 10px;
+      text-align: left; margin-bottom: 1.2rem; font-size: 0.92rem;
     }
     .modal-details div { margin-bottom: 0.4rem; }
     .modal-details strong { color: var(--charcoal); }
+    .deposit-highlight {
+      background: #FDF6F6; border: 1px solid #F0D6D9; padding: 1rem 1.2rem;
+      border-radius: 10px; margin-bottom: 1.5rem; text-align: left;
+    }
+    .deposit-highlight .amount {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
+      color: var(--rose-gold); font-weight: 600;
+    }
     .modal-close {
-      background: var(--charcoal); color: white; border: none; padding: 0.9rem 2rem;
+      background: var(--charcoal); color: white; border: none; padding: 0.9rem 2.2rem;
       border-radius: 50px; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;
       cursor: pointer; transition: background 0.3s;
     }
@@ -383,7 +431,7 @@
     <div class="hero-content">
       <div class="hero-text">
         <h1>Timeless Beauty,<br><span>Refined.</span></h1>
-        <p>Luxury aesthetic treatments in Stanley, County Durham. Expert care, transparent pricing and easy online booking.</p>
+        <p>Luxury aesthetic treatments in Stanley, County Durham. Secure your appointment with a simple 20% deposit.</p>
         <div>
           <a href="#booking" class="btn">Book Appointment</a>
           <a href="#services" class="btn btn-outline">View Prices</a>
@@ -414,27 +462,29 @@
     </div>
   </section>
 
-  <!-- SERVICES + PRICES -->
+  <!-- SERVICES -->
   <section class="services" id="services">
     <div class="container">
       <div class="section-header">
         <h2>Treatments & Pricing</h2>
         <div class="divider"></div>
-        <p>Transparent pricing. No hidden fees. Click any treatment to book instantly.</p>
+        <p>Transparent pricing. A 20% deposit secures your booking. Click any treatment to book.</p>
       </div>
       <div class="services-grid">
         <div class="service-card" data-treatment="anti-wrinkle" data-price="195">
           <div class="service-icon">✦</div>
           <h3>Anti-Wrinkle Injections</h3>
-          <p>Subtle smoothing of forehead, frown lines and crow’s feet for a refreshed look.</p>
+          <p>Subtle smoothing of forehead, frown lines and crow’s feet.</p>
           <div class="price">£195 <span>from</span></div>
+          <div class="deposit-note">Deposit from £39</div>
           <button class="book-btn">Book This</button>
         </div>
         <div class="service-card" data-treatment="lip-fillers" data-price="220">
           <div class="service-icon">◇</div>
           <h3>Lip Fillers</h3>
-          <p>Natural volume and definition using premium hyaluronic acid fillers.</p>
+          <p>Natural volume and definition using premium fillers.</p>
           <div class="price">£220 <span>from</span></div>
+          <div class="deposit-note">Deposit from £44</div>
           <button class="book-btn">Book This</button>
         </div>
         <div class="service-card" data-treatment="cheek-fillers" data-price="280">
@@ -442,61 +492,80 @@
           <h3>Cheek Fillers</h3>
           <p>Restore mid-face volume and lift for youthful contours.</p>
           <div class="price">£280 <span>from</span></div>
+          <div class="deposit-note">Deposit from £56</div>
           <button class="book-btn">Book This</button>
         </div>
         <div class="service-card" data-treatment="jawline" data-price="350">
           <div class="service-icon">◈</div>
           <h3>Jawline Contouring</h3>
-          <p>Non-surgical sculpting for a sharper, more defined jawline.</p>
+          <p>Non-surgical sculpting for a sharper, defined jawline.</p>
           <div class="price">£350 <span>from</span></div>
+          <div class="deposit-note">Deposit from £70</div>
           <button class="book-btn">Book This</button>
         </div>
         <div class="service-card" data-treatment="skin-boosters" data-price="250">
           <div class="service-icon">◎</div>
           <h3>Skin Boosters</h3>
-          <p>Deep hydration and glow with Profhilo or similar treatments.</p>
+          <p>Deep hydration and glow with Profhilo-style treatments.</p>
           <div class="price">£250 <span>from</span></div>
+          <div class="deposit-note">Deposit from £50</div>
           <button class="book-btn">Book This</button>
         </div>
         <div class="service-card" data-treatment="consultation" data-price="0">
           <div class="service-icon">✧</div>
           <h3>Consultation</h3>
-          <p>Personalised treatment plan. Fully redeemable against treatment on the day.</p>
+          <p>Personalised treatment plan. Fully redeemable against treatment.</p>
           <div class="price">Free</div>
+          <div class="deposit-note">No deposit required</div>
           <button class="book-btn">Book This</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BOOKING SYSTEM -->
+  <!-- BOOKING -->
   <section class="booking" id="booking">
     <div class="container">
       <div class="section-header">
         <h2>Book Your Appointment</h2>
         <div class="divider"></div>
-        <p>Select your treatment, choose a date & time, and we’ll confirm your booking shortly.</p>
+        <p>Select your treatment and preferred time. A 20% deposit secures your slot.</p>
       </div>
       <div class="booking-grid">
         <div class="booking-info">
-          <h3>Our Pricing</h3>
-          <p>All prices include consultation and aftercare advice. A £50 deposit may be required to secure your appointment.</p>
+          <h3>Pricing Overview</h3>
+          <p>All prices include consultation and aftercare. A 20% deposit is required to confirm your booking.</p>
           <ul class="price-list">
             <li><span class="name">Anti-Wrinkle (1 area)</span><span class="cost">from £195</span></li>
             <li><span class="name">Anti-Wrinkle (2–3 areas)</span><span class="cost">from £250</span></li>
             <li><span class="name">Lip Fillers (0.5–1ml)</span><span class="cost">from £220</span></li>
             <li><span class="name">Cheek Fillers</span><span class="cost">from £280</span></li>
             <li><span class="name">Jawline Contouring</span><span class="cost">from £350</span></li>
-            <li><span class="name">Skin Boosters / Profhilo</span><span class="cost">from £250</span></li>
+            <li><span class="name">Skin Boosters</span><span class="cost">from £250</span></li>
             <li><span class="name">Initial Consultation</span><span class="cost">Free</span></li>
           </ul>
+          <div class="deposit-policy">
+            <strong>Deposit Policy:</strong> A 20% non-refundable deposit is required to secure your appointment. The remaining balance is payable on the day of treatment. Deposits are refundable only with 48 hours’ notice.
+          </div>
         </div>
 
         <div class="booking-form">
           <form id="bookingForm">
-            <div class="selected-price" id="priceDisplay">
-              <span>Selected Treatment</span>
-              <span id="livePrice">£0</span>
+            <!-- Live Price Breakdown -->
+            <div class="price-breakdown" id="priceBreakdown">
+              <div class="row">
+                <span>Treatment Total</span>
+                <span id="totalPrice">£0</span>
+              </div>
+              <div class="divider-line"></div>
+              <div class="row deposit-row">
+                <span>Deposit Due Now (20%)</span>
+                <span id="depositPrice">£0</span>
+              </div>
+              <div class="row balance-row">
+                <span>Balance on the day</span>
+                <span id="balancePrice">£0</span>
+              </div>
             </div>
 
             <div class="form-group">
@@ -555,7 +624,14 @@
               <textarea id="notes" name="notes" rows="3" placeholder="Any preferences or questions..."></textarea>
             </div>
 
-            <button type="submit" class="form-submit" id="submitBtn">Request Booking</button>
+            <div class="checkbox-group">
+              <input type="checkbox" id="depositAgree" name="depositAgree" required>
+              <label for="depositAgree">
+                I understand and agree to pay a <strong>20% non-refundable deposit</strong> to secure this booking. The remaining balance will be due on the day of treatment.
+              </label>
+            </div>
+
+            <button type="submit" class="form-submit" id="submitBtn">Request Booking & Pay Deposit</button>
           </form>
         </div>
       </div>
@@ -583,13 +659,13 @@
         </div>
         <div class="feature">
           <div class="feature-number">03</div>
-          <h3>Transparent Pricing</h3>
-          <p>Clear prices with no surprises. Free consultations available.</p>
+          <h3>Secure Booking</h3>
+          <p>Simple 20% deposit system – your appointment is guaranteed.</p>
         </div>
         <div class="feature">
           <div class="feature-number">04</div>
-          <h3>Easy Online Booking</h3>
-          <p>Book your preferred date and time in just a few clicks.</p>
+          <h3>Transparent Pricing</h3>
+          <p>Clear prices and no hidden fees. Free consultations available.</p>
         </div>
       </div>
     </div>
@@ -620,7 +696,7 @@
     </div>
   </section>
 
-  <!-- CONTACT / FOOTER -->
+  <!-- FOOTER -->
   <footer id="contact">
     <div class="container">
       <div class="footer-grid">
@@ -657,8 +733,16 @@
   <!-- SUCCESS MODAL -->
   <div class="modal-overlay" id="successModal">
     <div class="modal">
+      <div class="modal-icon">✓</div>
       <h3>Booking Request Received</h3>
-      <p>Thank you! We have received your appointment request and will contact you shortly to confirm.</p>
+      <p>Thank you! We’ve received your appointment request.</p>
+      
+      <div class="deposit-highlight" id="depositHighlight">
+        <div style="font-size:0.85rem; margin-bottom:0.3rem; color:#666;">Deposit required to secure your booking:</div>
+        <div class="amount" id="modalDeposit">£0</div>
+        <div style="font-size:0.85rem; margin-top:0.4rem; color:#666;">We will send you a secure payment link within 1 hour.</div>
+      </div>
+
       <div class="modal-details" id="modalDetails"></div>
       <button class="modal-close" id="closeModal">Close</button>
     </div>
@@ -684,30 +768,38 @@
       });
     });
 
-    // ========== SET MIN DATE (today) ==========
+    // ========== MIN DATE ==========
     const dateInput = document.getElementById('date');
     const today = new Date().toISOString().split('T')[0];
     dateInput.min = today;
 
-    // ========== LIVE PRICE UPDATE ==========
+    // ========== LIVE DEPOSIT CALCULATION ==========
     const treatmentSelect = document.getElementById('treatment');
-    const livePrice = document.getElementById('livePrice');
+    const totalPriceEl = document.getElementById('totalPrice');
+    const depositPriceEl = document.getElementById('depositPrice');
+    const balancePriceEl = document.getElementById('balancePrice');
 
-    function updatePrice() {
-      const selected = treatmentSelect.options[treatmentSelect.selectedIndex];
-      const price = selected.getAttribute('data-price') || 0;
-      livePrice.textContent = price == 0 ? 'Free' : `£${price}`;
+    function formatMoney(amount) {
+      return amount === 0 ? '£0' : '£' + amount.toFixed(2);
     }
-    treatmentSelect.addEventListener('change', updatePrice);
 
-    // ========== SERVICE CARDS → PRE-FILL BOOKING ==========
+    function updatePricing() {
+      const selected = treatmentSelect.options[treatmentSelect.selectedIndex];
+      const price = parseFloat(selected.getAttribute('data-price')) || 0;
+      const deposit = Math.round(price * 0.2 * 100) / 100; // 20% rounded to 2 decimals
+      const balance = Math.round((price - deposit) * 100) / 100;
+
+      totalPriceEl.textContent = formatMoney(price);
+      depositPriceEl.textContent = formatMoney(deposit);
+      balancePriceEl.textContent = formatMoney(balance);
+    }
+
+    treatmentSelect.addEventListener('change', updatePricing);
+
+    // ========== SERVICE CARDS → PRE-FILL ==========
     document.querySelectorAll('.service-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        // Ignore if clicking the button (it will bubble anyway)
+      card.addEventListener('click', () => {
         const treatment = card.dataset.treatment;
-        const price = card.dataset.price;
-
-        // Map data-treatment to select values
         const map = {
           'anti-wrinkle': 'Anti-Wrinkle Injections',
           'lip-fillers': 'Lip Fillers',
@@ -716,19 +808,18 @@
           'skin-boosters': 'Skin Boosters',
           'consultation': 'Consultation'
         };
-
         treatmentSelect.value = map[treatment] || '';
-        updatePrice();
-
-        // Smooth scroll to booking form
+        updatePricing();
         document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
       });
     });
 
-    // ========== BOOKING FORM ==========
+    // ========== FORM SUBMISSION ==========
     const form = document.getElementById('bookingForm');
     const modal = document.getElementById('successModal');
     const modalDetails = document.getElementById('modalDetails');
+    const modalDeposit = document.getElementById('modalDeposit');
+    const depositHighlight = document.getElementById('depositHighlight');
     const closeModal = document.getElementById('closeModal');
 
     form.addEventListener('submit', (e) => {
@@ -741,16 +832,29 @@
       const email = document.getElementById('email').value;
       const phone = document.getElementById('phone').value;
       const notes = document.getElementById('notes').value;
-      const priceText = livePrice.textContent;
 
-      // Format date nicely
+      const selected = treatmentSelect.options[treatmentSelect.selectedIndex];
+      const price = parseFloat(selected.getAttribute('data-price')) || 0;
+      const deposit = Math.round(price * 0.2 * 100) / 100;
+      const balance = Math.round((price - deposit) * 100) / 100;
+
       const formattedDate = new Date(date).toLocaleDateString('en-GB', {
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
       });
 
+      // Update modal deposit section
+      if (deposit > 0) {
+        modalDeposit.textContent = formatMoney(deposit);
+        depositHighlight.style.display = 'block';
+      } else {
+        depositHighlight.style.display = 'none';
+      }
+
       modalDetails.innerHTML = `
         <div><strong>Treatment:</strong> ${treatment}</div>
-        <div><strong>Price:</strong> ${priceText}</div>
+        <div><strong>Total Price:</strong> ${formatMoney(price)}</div>
+        <div><strong>Deposit (20%):</strong> ${formatMoney(deposit)}</div>
+        <div><strong>Balance on day:</strong> ${formatMoney(balance)}</div>
         <div><strong>Date:</strong> ${formattedDate}</div>
         <div><strong>Time:</strong> ${time}</div>
         <div><strong>Name:</strong> ${name}</div>
@@ -761,14 +865,13 @@
 
       modal.classList.add('active');
       form.reset();
-      livePrice.textContent = '£0';
+      updatePricing();
     });
 
     closeModal.addEventListener('click', () => {
       modal.classList.remove('active');
     });
 
-    // Close modal on overlay click
     modal.addEventListener('click', (e) => {
       if (e.target === modal) modal.classList.remove('active');
     });
