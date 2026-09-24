@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platinum Aesthetics | Advanced Aesthetics & Skin Clinic Stanley DH9</title>
+    <title>Platinum Aesthetics | Nurse-Led Aesthetics Stanley DH9</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -48,27 +48,21 @@
 
     <main class="max-w-md mx-auto px-5 mt-6 space-y-6">
 
-        <!-- Hero Card -->
-        <section class="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" 
-                 alt="Platinum Aesthetics Clinic" 
-                 class="w-full h-52 object-cover brightness-[0.35]"
-                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80';">
-            <div class="absolute inset-0 p-6 flex flex-col justify-end text-left space-y-2 bg-gradient-to-t from-[#060913] via-[#060913]/60 to-transparent">
-                <div class="inline-flex items-center gap-1.5 bg-cyan-500/10 border border-cyan-400/30 px-3 py-1 rounded-full text-[10px] uppercase font-bold text-cyan-300 w-max">
-                    <i class="fa-solid fa-shield-halved text-cyan-400"></i> Medically Compliant & Fully Insured
-                </div>
-                <h2 class="text-xl font-bold font-cinzel text-white leading-tight">
-                    Natural Enhancement & Clinical Rejuvenation
-                </h2>
-                <p class="text-[11px] text-slate-300 leading-relaxed">
-                    Nurse-led advanced aesthetic treatments designed to subtly refresh, contour, and restore youthful radiance.
-                </p>
+        <!-- Hero Panel -->
+        <section class="glass-panel p-6 rounded-3xl space-y-3 relative overflow-hidden glow-border">
+            <div class="inline-flex items-center gap-1.5 bg-cyan-500/10 border border-cyan-400/30 px-3 py-1 rounded-full text-[10px] uppercase font-bold text-cyan-300">
+                <i class="fa-solid fa-shield-halved text-cyan-400"></i> Medically Compliant & Fully Insured
             </div>
+            <h2 class="text-xl font-bold font-cinzel text-white leading-tight">
+                Natural Enhancement & Clinical Rejuvenation
+            </h2>
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+                Nurse-led advanced aesthetic treatments designed to subtly refresh, contour, and restore youthful radiance.
+            </p>
         </section>
 
         <!-- Deposit Banner -->
-        <div class="glass-panel p-4 rounded-2xl flex items-start gap-3 border-cyan-500/30 glow-border">
+        <div class="glass-panel p-4 rounded-2xl flex items-start gap-3 border-cyan-500/30">
             <div class="w-8 h-8 rounded-full bg-cyan-400/20 flex items-center justify-center text-cyan-300 shrink-0 mt-0.5">
                 <i class="fa-solid fa-circle-check text-sm"></i>
             </div>
@@ -92,11 +86,7 @@
                 <!-- Treatment 1: Anti-Wrinkle -->
                 <div onclick="selectTreatment(this, 'Anti-Wrinkle Injections (2 Areas)', 160.00)" class="treatment-card cursor-pointer glass-panel border-2 border-cyan-400 p-4 rounded-2xl transition-all shadow-xl">
                     <div class="flex gap-3.5 items-center">
-                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=300&q=80" 
-                             alt="Anti-Wrinkle Injections" 
-                             class="w-16 h-16 rounded-xl object-cover border border-slate-700 shrink-0"
-                             onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
-                        <div class="hidden w-16 h-16 rounded-xl bg-slate-900 border border-cyan-500/30 flex-col items-center justify-center text-cyan-400 shrink-0">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-400/40 flex items-center justify-center text-cyan-400 shrink-0">
                             <i class="fa-solid fa-sparkles text-lg"></i>
                         </div>
                         <div class="flex-1 min-w-0">
@@ -109,14 +99,10 @@
                     </div>
                 </div>
 
-                <!-- Treatment 2: Lip Augmentation (Fixed Image) -->
+                <!-- Treatment 2: Lip Augmentation -->
                 <div onclick="selectTreatment(this, 'Dermal Lip Filler (1ml Revolax)', 140.00)" class="treatment-card cursor-pointer bg-slate-900/60 border border-slate-800 p-4 rounded-2xl transition-all hover:border-slate-700">
                     <div class="flex gap-3.5 items-center">
-                        <img src="https://images.unsplash.com/photo-1588516903720-8ceb67f9ef84?auto=format&fit=crop&w=300&q=80" 
-                             alt="Lip Augmentation Filler" 
-                             class="w-16 h-16 rounded-xl object-cover border border-slate-800 shrink-0"
-                             onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
-                        <div class="hidden w-16 h-16 rounded-xl bg-slate-900 border border-pink-500/30 flex-col items-center justify-center text-pink-400 shrink-0">
+                        <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-400/40 flex items-center justify-center text-pink-400 shrink-0">
                             <i class="fa-solid fa-lips text-lg"></i>
                         </div>
                         <div class="flex-1 min-w-0">
@@ -129,14 +115,10 @@
                     </div>
                 </div>
 
-                <!-- Treatment 3: Seventy Hyal Skin Booster (Fixed Image) -->
+                <!-- Treatment 3: Seventy Hyal Skin Booster -->
                 <div onclick="selectTreatment(this, 'Seventy Hyal Skin Booster', 120.00)" class="treatment-card cursor-pointer bg-slate-900/60 border border-slate-800 p-4 rounded-2xl transition-all hover:border-slate-700">
                     <div class="flex gap-3.5 items-center">
-                        <img src="https://images.unsplash.com/photo-1512290900673-7002ddb93081?auto=format&fit=crop&w=300&q=80" 
-                             alt="Skin Hydration Booster" 
-                             class="w-16 h-16 rounded-xl object-cover border border-slate-800 shrink-0"
-                             onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
-                        <div class="hidden w-16 h-16 rounded-xl bg-slate-900 border border-cyan-500/30 flex-col items-center justify-center text-cyan-300 shrink-0">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-400/40 flex items-center justify-center text-cyan-300 shrink-0">
                             <i class="fa-solid fa-droplet text-lg"></i>
                         </div>
                         <div class="flex-1 min-w-0">
@@ -152,11 +134,7 @@
                 <!-- Treatment 4: Lumi Eyes -->
                 <div onclick="selectTreatment(this, 'Lumi Eyes Under-Eye Treatment', 110.00)" class="treatment-card cursor-pointer bg-slate-900/60 border border-slate-800 p-4 rounded-2xl transition-all hover:border-slate-700">
                     <div class="flex gap-3.5 items-center">
-                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=300&q=80" 
-                             alt="Lumi Eyes Skin Treatment" 
-                             class="w-16 h-16 rounded-xl object-cover border border-slate-800 shrink-0"
-                             onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
-                        <div class="hidden w-16 h-16 rounded-xl bg-slate-900 border border-indigo-500/30 flex-col items-center justify-center text-indigo-400 shrink-0">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-400/40 flex items-center justify-center text-indigo-400 shrink-0">
                             <i class="fa-solid fa-eye text-lg"></i>
                         </div>
                         <div class="flex-1 min-w-0">
